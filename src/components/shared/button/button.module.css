@@ -1,0 +1,24 @@
+.button{
+    padding: 12px 18px;
+    border-radius:20px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.primaryButton{
+    background-color: #0c93ec;
+    color: white;
+    border:1px solid white
+}
+
+.outlinedButton{
+    background-color: transparent;
+    color: #0c93ec;
+    border:1px solid #0c93ec
+}
+
+.dashedButton{
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #0c93ec
+}

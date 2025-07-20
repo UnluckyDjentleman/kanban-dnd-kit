@@ -1,0 +1,22 @@
+.card{
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width:200px;
+    padding:12px 18px;
+
+    >.header{
+        >h1{
+            font-size:16px;
+            color:white;
+            letter-spacing: -1%;
+            padding: 6px;
+        }
+    }
+
+    >.info{
+        padding:24px 6px;
+        span{
+            color:rgb(32, 32, 32)
+        }
+    }
+}

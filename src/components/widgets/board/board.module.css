@@ -1,0 +1,19 @@
+.board{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width:300px;
+    padding:30px 18px;
+    background-color: white;
+    h1{
+        font-size:24px;
+        color:rgb(32, 32, 32);
+        letter-spacing: -1%;
+    }
+
+    >.info{
+        padding:24px 6px;
+        span{
+            display: block;
+            color:rgb(32, 32, 32)
+        }
+    }
+}

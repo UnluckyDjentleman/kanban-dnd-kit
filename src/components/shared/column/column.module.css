@@ -1,0 +1,18 @@
+.column{
+    background-color: white;
+    height:100vh;
+    padding:12px 6px;
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    align-items: center;
+
+    .title{
+        font-size:20px;
+        color:rgba(32,32,32);
+        font-weight:lighter;
+        text-align:center;
+    }
+
+}

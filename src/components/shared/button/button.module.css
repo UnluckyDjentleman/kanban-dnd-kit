@@ -22,3 +22,11 @@
     border: 1px solid transparent;
     color: #0c93ec
 }
+
+@media screen and (max-width:768px) {
+    .button{
+        span{
+            display: none;
+        }
+    }
+}

@@ -1,15 +1,17 @@
 import { useContext } from "react";
-import { ButtonType } from "../../constants/enums/buttonType";
-import Button from "../shared/button/button";
-import { ModalContext } from "../shared/modal/context/modal.context";
-import { CardStatus } from "../../constants/enums/cardStatus";
-import Column from "../shared/column/column";
-import { useKanbanStore } from "../../store/store";
+import { ButtonType } from "../../../constants/enums/buttonType";
+import Button from "../../shared/button/button";
+import { ModalContext } from "../../shared/modal/context/modal.context";
+import { CardStatus } from "../../../constants/enums/cardStatus";
+import Column from "../../shared/column/column";
+import { useKanbanStore } from "../../../store/store";
 import { useNavigate, useParams } from "react-router-dom";
-import KanbanCard from "../widgets/card/card";
-import DraggableCard from "../widgets/draggable/draggable";
+import KanbanCard from "../../widgets/card/card";
+import DraggableCard from "../../widgets/draggable/draggable";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
-import { useAppTranslation } from "../../store/hooks/useTranslation";
+import { useAppTranslation } from "../../../store/hooks/useTranslation";
+import styles from "./kanban-page.module.css"
+import { MdArrowBackIos } from "react-icons/md";
 
 export default function KanbanPage(){
 
@@ -30,11 +32,12 @@ export default function KanbanPage(){
     }
 
     return (
-        <div style={{display:"flex", flexDirection:"column", height:"100%"}}>
-            <div style={{display:"flex", justifyContent:"space-around"}}>
+        <div className={styles.main}>
+            <div className={styles.header}>
                 <Button type={ButtonType.dashed} onClick={()=>navigate("/")}>
                     <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                        {t("Back")}
+                        <MdArrowBackIos size={12}></MdArrowBackIos>
+                        <span>{t("Back")}</span>
                     </div>
                 </Button>
                 <p>{boards.find(el=>el.id===parseInt(boardId as string,10))?.name}</p>
@@ -42,8 +45,8 @@ export default function KanbanPage(){
                     {t("Add New Item")}
                 </Button>
             </div>
-            <DndContext onDragEnd={handleDragEnd}>
-                <div style={{display:"flex", justifyContent:"space-evenly"}}>
+            <div className={styles.columns}>
+                <DndContext onDragEnd={handleDragEnd}>
                     {
                         Object.keys(CardStatus).filter(value => typeof value === 'string').map(el=>(
                             <Column columnName={el}>
@@ -57,8 +60,8 @@ export default function KanbanPage(){
                             </Column>
                         ))
                     }
-                </div>
-            </DndContext>
+                </DndContext>
+            </div>
         </div>
     )
 }

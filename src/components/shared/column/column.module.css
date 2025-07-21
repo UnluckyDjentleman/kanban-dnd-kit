@@ -1,12 +1,13 @@
 .column{
     background-color: white;
-    height:100vh;
-    padding:12px 6px;
-    width:400px;
+    height: calc(100vh - 100px); 
+    padding: 12px 6px;
+    width: 333.33px;
     display: flex;
     flex-direction: column;
-    gap:4px;
+    gap: 4px;
     align-items: center;
+    box-sizing: border-box;
 
     .title{
         font-size:20px;

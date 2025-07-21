@@ -9,6 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import KanbanCard from "../widgets/card/card";
 import DraggableCard from "../widgets/draggable/draggable";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
+import { useAppTranslation } from "../../store/hooks/useTranslation";
 
 export default function KanbanPage(){
 
@@ -16,6 +17,7 @@ export default function KanbanPage(){
     const navigate=useNavigate()
     const {cards, boards, updateCard, updateBoard, getCardsByBoardId}=useKanbanStore()
     const {boardId}=useParams()
+    const {t}=useAppTranslation()
 
     const handleDragEnd=(e:DragEndEvent)=>{
         const {active, over}=e;
@@ -32,12 +34,12 @@ export default function KanbanPage(){
             <div style={{display:"flex", justifyContent:"space-around"}}>
                 <Button type={ButtonType.dashed} onClick={()=>navigate("/")}>
                     <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                        Back
+                        {t("Back")}
                     </div>
                 </Button>
                 <p>{boards.find(el=>el.id===parseInt(boardId as string,10))?.name}</p>
                 <Button type={ButtonType.primary} onClick={()=>viewModalCard(undefined, boardId)}>
-                    Add new Card
+                    {t("Add New Item")}
                 </Button>
             </div>
             <DndContext onDragEnd={handleDragEnd}>

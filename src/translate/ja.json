@@ -1,0 +1,15 @@
+{ 
+    "Add New Board": "新しいボードを追加", 
+    "Add New Item": "新しいアイテムを追加", 
+    "Save": "保存", 
+    "Deadline Date": "締切日", 
+    "Name": "名前", 
+    "Board Title": "ボードタイトル", 
+    "Card Title": "カードタイトル", 
+    "Back": "戻る", 
+    "Created": "作成日", 
+    "Updated": "更新日",
+    "To Do":"やること",
+    "In Progress":"進行中",
+    "Done":"完了"
+}

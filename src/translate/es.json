@@ -1,0 +1,15 @@
+{ 
+    "Add New Board": "Agregar Nueva Junta", 
+    "Add New Item": "Agregar Nuevo Elemento", 
+    "Save": "Guardar", 
+    "Deadline Date": "Fecha Límite", 
+    "Name": "Nombre", 
+    "Board Title": "Título de la Junta", 
+    "Card Title": "Título de la Tarjeta", 
+    "Back": "Atrás", 
+    "Created": "Creado", 
+    "Updated": "Actualizado" ,
+    "To Do":"Por Hacer",
+    "In Progress":"En Progresso",
+    "Done":"Hecho"
+}

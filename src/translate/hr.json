@@ -1,0 +1,15 @@
+{ 
+    "Add New Board":"Dodaj novu ploču", 
+    "Add New Item":"Dodaj novu stavku", 
+    "Save":"Spremi", 
+    "Deadline Date":"Datum isteka", 
+    "Name":"Ime", 
+    "Board Title":"Naslov ploče", 
+    "Card Title":"Naslov kartice", 
+    "Back":"Natrag", 
+    "Created":"Kreirano", 
+    "Updated":"Ažurirano",
+    "To Do":"Učiniti",
+    "In Progress": "U tijeku",
+    "Done":"Gotovo"
+}

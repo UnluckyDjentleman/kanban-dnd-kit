@@ -9,6 +9,7 @@ import { useKanbanStore } from "../../../../store/store";
 import { ModalContext } from "../context/modal.context";
 import { ButtonType } from "../../../../constants/enums/buttonType";
 import { CardStatus } from "../../../../constants/enums/cardStatus";
+import { useAppTranslation } from "../../../../store/hooks/useTranslation";
 
 export default function ModalCard({card, boardId}:{card?:Card, boardId?:string}){
 
@@ -17,9 +18,10 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
 
     console.log(boardId);
 
-    const [color, setColor]=useState(card?.color);
+    const [color, setColor]=useState(card?.color||colors[0]);
     const [date,setDate]=useState(card?.deadline);
     const [title, setTitle]=useState(card?.title);
+    const {t}=useAppTranslation()
 
     const onSubmit=(e: FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
@@ -30,6 +32,7 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
             color: color as string,
             board_id: parseInt(boardId as string,10)
         }
+        //if setted date is lower than current then set it to current
         if(newCard.deadline<new Date()){
             newCard.deadline=new Date();
         }
@@ -45,9 +48,9 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
 
     return (
         <form className={styles.form} onSubmit={onSubmit}>
-            <input placeholder="Title" type={"text"} value={title} onChange={(e)=>setTitle(e.currentTarget.value)}/>
-            <label>Deadline:</label>
-            <input placeholder="Date" type={"date"} value={date?new Date(date as Date).toISOString().split('T')[0]:new Date().toISOString().split('T')[0]} onChange={(e)=>setDate(isNaN(new Date(e.currentTarget.value).getTime()) ? undefined : new Date(e.currentTarget.value))}/>
+            <input placeholder={t("Card Title")} type={"text"} value={title} onChange={(e)=>setTitle(e.currentTarget.value)}/>
+            <label>{t("Deadline Date")}:</label>
+            <input placeholder={t("Deadline Date")} type={"date"} value={date?new Date(date as Date).toISOString().split('T')[0]:new Date().toISOString().split('T')[0]} onChange={(e)=>setDate(isNaN(new Date(e.currentTarget.value).getTime()) ? undefined : new Date(e.currentTarget.value))}/>
             <div className={styles["color-container"]}>
                 {
                     colors.map(el=>(
@@ -56,7 +59,7 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
                 }
             </div>
             <Button type={ButtonType.primary}>
-                Save
+                {t("Save")}
             </Button>
         </form>
     )

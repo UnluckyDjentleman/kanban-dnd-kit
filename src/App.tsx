@@ -1,11 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainPage from './components/pages/main/MainPage';
 import KanbanPage from './components/pages/kanban/KanbanPage';
 import ErrorPage from './components/pages/error/ErrorPage';
-import { DndContext } from '@dnd-kit/core';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './translate';
 

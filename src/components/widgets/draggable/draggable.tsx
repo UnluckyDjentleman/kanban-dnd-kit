@@ -1,4 +1,4 @@
-import { useDraggable, DragOverlay } from "@dnd-kit/core";
+import { useDraggable } from "@dnd-kit/core";
 import {CSS} from "@dnd-kit/utilities"
 import styles from "./draggable.module.css"
 import { MdDragIndicator } from "react-icons/md";

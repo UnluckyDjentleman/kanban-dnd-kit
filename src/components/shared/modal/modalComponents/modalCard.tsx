@@ -4,7 +4,6 @@ import styles from "./modalComponent.module.css"
 import Button from "../../button/button";
 import { colors } from "../../../../constants/enums/colors";
 import clsx from "clsx";
-import { useLocation, useParams } from "react-router-dom";
 import { useKanbanStore } from "../../../../store/store";
 import { ModalContext } from "../context/modal.context";
 import { ButtonType } from "../../../../constants/enums/buttonType";

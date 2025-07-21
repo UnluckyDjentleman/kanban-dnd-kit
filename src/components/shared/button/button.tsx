@@ -1,9 +1,9 @@
 import { clsx } from "clsx"
 import styles from "./button.module.css"
-import { ReactNode } from "react"
+import { JSX, ReactNode } from "react"
 import { ButtonType } from "../../../constants/enums/buttonType";
 
-export default function Button({type, children, onClick}:{type:ButtonType, children:ReactNode, onClick?:()=>void}){
+export default function Button({type, children, onClick}:{type:ButtonType, children:ReactNode|JSX.Element, onClick?:(e?:React.MouseEvent<HTMLButtonElement>)=>void}){
     
     const getButtonClassByType=(type:ButtonType)=>{
         switch(type){

@@ -25,10 +25,13 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
         e.preventDefault();
         const newCard:Omit<Card,"id">={
             title: title as string,
-            deadline: date as Date,
+            deadline: date?date as Date:new Date(),
             status: !card?CardStatus["To Do"]:card.status,
             color: color as string,
             board_id: parseInt(boardId as string,10)
+        }
+        if(newCard.deadline<new Date()){
+            newCard.deadline=new Date();
         }
         if(!card){
             addCard(newCard)
@@ -44,7 +47,7 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
         <form className={styles.form} onSubmit={onSubmit}>
             <input placeholder="Title" type={"text"} value={title} onChange={(e)=>setTitle(e.currentTarget.value)}/>
             <label>Deadline:</label>
-            <input placeholder="Date" type={"date"} value={date?.toISOString().split('T')[0] || ''} onChange={(e)=>setDate(isNaN(new Date(e.currentTarget.value).getTime()) ? undefined : new Date(e.currentTarget.value))}/>
+            <input placeholder="Date" type={"date"} value={date?new Date(date as Date).toISOString().split('T')[0]:new Date().toISOString().split('T')[0]} onChange={(e)=>setDate(isNaN(new Date(e.currentTarget.value).getTime()) ? undefined : new Date(e.currentTarget.value))}/>
             <div className={styles["color-container"]}>
                 {
                     colors.map(el=>(

@@ -1,12 +1,13 @@
 .card{
-    border-radius: 10%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width:200px;
-    padding:12px 18px;
+    width:250px;
 
     >.header{
+        top:0;
+        left:0;
+        width:100%;
         >h1{
-            font-size:16px;
+            font-size:20px;
             color:white;
             letter-spacing: -1%;
             padding: 6px;
@@ -18,5 +19,10 @@
         span{
             color:rgb(32, 32, 32)
         }
+    }
+    >.footer{
+        display:flex;
+        z-index:2;
+        justify-content: space-between; 
     }
 }

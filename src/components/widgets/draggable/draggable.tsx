@@ -1,5 +1,7 @@
 import { useDraggable, DragOverlay } from "@dnd-kit/core";
 import {CSS} from "@dnd-kit/utilities"
+import styles from "./draggable.module.css"
+import { MdDragIndicator } from "react-icons/md";
 
 export default function DraggableCard({id,children}:{
     id:string,
@@ -14,8 +16,13 @@ export default function DraggableCard({id,children}:{
     }
 
     return(
-        <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-            {children}
+        <div ref={setNodeRef} style={style} className={styles.draggable} >
+            <div className={styles.dragHandle} {...listeners} {...attributes}>
+                <MdDragIndicator size={18}/>
+            </div>
+            <div className={styles.cardContent}>
+                {children}
+            </div>
         </div>
     )
 }

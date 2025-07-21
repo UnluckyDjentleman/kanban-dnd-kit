@@ -10,10 +10,15 @@
     }
 
     >.info{
-        padding:24px 6px;
+        padding:12px 6px;
         span{
             display: block;
             color:rgb(32, 32, 32)
         }
+    }
+
+    >.footer{
+        display:flex;
+        justify-content: space-between;
     }
 }

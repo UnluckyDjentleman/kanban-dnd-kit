@@ -17,6 +17,7 @@ Features:
 
 Need to add/upgrade/delete:
 
-- Add adaptive;
 - Add more languages;
-- Deploy;
+- Fix the problem with language pick;
+- Add filtration of boards (because there could a lot of cards);
+- If you want me to add something here, check the social network links in my Github.

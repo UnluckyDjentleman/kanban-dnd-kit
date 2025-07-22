@@ -31,9 +31,9 @@ export default function ModalBoard({item}:{item?:Board}){
 
     return (
         <form onSubmit={onSubmit} className={styles.form}>
-            <input placeholder={t("Board Title")} type={"text"} value={boardName} onChange={(e)=>setBoardName(e.currentTarget.value)}/>
+            <input required={true} placeholder={t("Board Title")} type={"text"} value={boardName} onChange={(e)=>setBoardName(e.currentTarget.value)}/>
             <Button type={ButtonType.primary}>
-                Save
+                {t("Save")}
             </Button>
         </form>
     )

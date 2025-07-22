@@ -47,9 +47,9 @@ export default function ModalCard({card, boardId}:{card?:Card, boardId?:string})
 
     return (
         <form className={styles.form} onSubmit={onSubmit}>
-            <input placeholder={t("Card Title")} type={"text"} value={title} onChange={(e)=>setTitle(e.currentTarget.value)}/>
+            <input required={true} placeholder={t("Card Title")} type={"text"} value={title} onChange={(e)=>setTitle(e.currentTarget.value)}/>
             <label>{t("Deadline Date")}:</label>
-            <input placeholder={t("Deadline Date")} type={"date"} value={date?new Date(date as Date).toISOString().split('T')[0]:new Date().toISOString().split('T')[0]} onChange={(e)=>setDate(isNaN(new Date(e.currentTarget.value).getTime()) ? undefined : new Date(e.currentTarget.value))}/>
+            <input required={true} placeholder={t("Deadline Date")} type={"date"} value={date?new Date(date as Date).toISOString().split('T')[0]:new Date().toISOString().split('T')[0]} onChange={(e)=>setDate(isNaN(new Date(e.currentTarget.value).getTime()) ? undefined : new Date(e.currentTarget.value))}/>
             <div className={styles["color-container"]}>
                 {
                     colors.map(el=>(

@@ -12,6 +12,7 @@ import ja from "./ja.json";
 import fr from "./fr.json";
 import hr from "./hr.json";
 import es from "./es.json"
+import { getLanguageFromLocalStorage } from "../utils/languageLocalStorage";
 
 const resources={
     en: {translation:en},
@@ -28,9 +29,9 @@ const resources={
 }
 
 i18n.use(initReactI18next).init({
-    lng:"en",
+    lng:getLanguageFromLocalStorage()??"en",
     resources,
-    fallbackLng: "en",
+    fallbackLng:getLanguageFromLocalStorage()??"en",
     interpolation: {
         escapeValue: false,
     },

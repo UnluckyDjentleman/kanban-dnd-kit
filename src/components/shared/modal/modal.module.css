@@ -19,8 +19,7 @@
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     .wrapper{
-        width:300px;
-        height:400px;
+        width:250px;
         padding:24px 32px;
     }
 }

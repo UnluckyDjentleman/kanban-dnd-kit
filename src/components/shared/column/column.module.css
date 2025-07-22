@@ -1,6 +1,6 @@
 .column{
     background-color: white;
-    height: calc(100vh - 100px); 
+    height: 100%; 
     padding: 12px 6px;
     width: 333.33px;
     display: flex;

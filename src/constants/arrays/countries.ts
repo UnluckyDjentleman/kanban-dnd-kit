@@ -2,14 +2,14 @@ import { Country } from "../types/country";
 
 export const countries:Country[]=[
     {
-        id:"be",
-        name:"Беларуская",
-        icon:"./assets/by.svg"
-    },
-    {
         id:"en",
         name:"English",
         icon:"./assets/gb.svg"
+    },
+    {
+        id:"be",
+        name:"Беларуская",
+        icon:"./assets/by.svg"
     },
     {
         id:"fr",

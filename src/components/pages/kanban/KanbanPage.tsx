@@ -12,6 +12,7 @@ import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import { useAppTranslation } from "../../../store/hooks/useTranslation";
 import styles from "./kanban-page.module.css"
 import { MdArrowBackIos } from "react-icons/md";
+import {restrictToWindowEdges} from "@dnd-kit/modifiers"
 
 export default function KanbanPage(){
 
@@ -45,8 +46,8 @@ export default function KanbanPage(){
                     {t("Add New Item")}
                 </Button>
             </div>
-            <div className={styles.columns}>
-                <DndContext onDragEnd={handleDragEnd}>
+            <DndContext onDragEnd={handleDragEnd} modifiers={[restrictToWindowEdges]}>
+                <div className={styles.columns}>
                     {
                         Object.keys(CardStatus).filter(value => typeof value === 'string').map(el=>(
                             <Column columnName={el}>
@@ -60,8 +61,8 @@ export default function KanbanPage(){
                             </Column>
                         ))
                     }
-                </DndContext>
-            </div>
+                </div>
+            </DndContext>
         </div>
     )
 }

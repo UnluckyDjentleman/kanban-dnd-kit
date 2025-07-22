@@ -17,6 +17,7 @@
         padding-top:100px;
         display: grid;
         height:100vh;
+        overscroll-behavior-x: contain;
         grid-template-columns: 1fr 1fr 1fr;
         gap:20px;
         align-self: center;
@@ -34,10 +35,10 @@
             display:flex;
             flex-direction:row;
             overflow-x:auto;
-            scroll-snap-type: x mandatory;
+            scroll-snap-type: x inherit;
             gap:10px;
             height:100vh;
-            width:100%;
+            width:100vw;
             -webkit-overflow-scrolling: touch;
             &::-webkit-scrollbar{
                 display: none;

@@ -18,7 +18,7 @@ export default function DraggableCard({id,children}:{
     return(
         <div ref={setNodeRef} style={style} className={styles.draggable} >
             <div className={styles.dragHandle} {...listeners} {...attributes}>
-                <MdDragIndicator size={18}/>
+                <MdDragIndicator size={24}/>
             </div>
             <div className={styles.cardContent}>
                 {children}

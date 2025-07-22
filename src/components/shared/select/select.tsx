@@ -34,6 +34,7 @@ export default function SelectComponent(){
             </div>
         )}
         value={selectedCountry}
+        defaultValue={countries[0]}
         getOptionValue={(option) => option.id}
         isOptionSelected={(option) => option.id === language}
         onChange={changeAppLanguage}

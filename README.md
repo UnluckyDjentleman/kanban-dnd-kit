@@ -17,7 +17,6 @@ Features:
 
 Need to add/upgrade/delete:
 
-- Add more languages;
-- Fix the problem with language pick;
-- Add filtration of boards (because there could a lot of cards);
+- Add more languages (Chinese, Dutch, Latvian, Portuguese and Swedish are in priority);
+- Add filtration of boards (because there could a lot of boards);
 - If you want me to add something here, check the social network links in my Github.

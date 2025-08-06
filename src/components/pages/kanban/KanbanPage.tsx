@@ -50,10 +50,10 @@ export default function KanbanPage(){
                 <div className={styles.columns}>
                     {
                         Object.keys(CardStatus).filter(value => typeof value === 'string').map(el=>(
-                            <Column columnName={el}>
+                            <Column key={el} columnName={el}>
                                 {
                                     getCardsByBoardId(Number(boardId)).filter(x=>x.status.toString()===el).map(card=>(
-                                        <DraggableCard id={card.id}>
+                                        <DraggableCard key={card.id} id={card.id}>
                                             <KanbanCard el={card}/>
                                         </DraggableCard>
                                     ))

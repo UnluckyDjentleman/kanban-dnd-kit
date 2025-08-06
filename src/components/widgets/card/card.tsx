@@ -22,7 +22,7 @@ export default function KanbanCard({el}:{el:Card}){
                 <h1>{el.title}</h1>
             </div>
             <div className={styles.info}>
-                <span>{t("Deadline Date")}: {new Date(el.deadline).toLocaleDateString().replace("/","-")}</span>
+                <span style={{color:`${Date.now() - new Date(el.deadline).getTime()>86400&&"red"}`}}>{t("Deadline Date")}: {new Date(el.deadline).toLocaleDateString().replace("/","-")}</span>
             </div>
             <div className={styles.footer}>
                 <Button type={ButtonType.dashed} onClick={(e?:React.MouseEvent<HTMLButtonElement>)=>{

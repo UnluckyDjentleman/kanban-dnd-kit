@@ -17,6 +17,5 @@ Features:
 
 Need to add/upgrade/delete:
 
-- Add more languages (Chinese, Dutch, Latvian, Portuguese and Swedish are in priority);
-- Add filtration of boards (because there could a lot of boards);
+- Add more languages (Chinese, Dutch, Indian, Latvian, Portuguese and Swedish are in priority);
 - If you want me to add something here, check the social network links in my Github.
